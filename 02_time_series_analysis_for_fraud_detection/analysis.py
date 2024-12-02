@@ -608,11 +608,6 @@ def generate_final_report(df: pd.DataFrame) -> None:
     fraud_distribution = df["isFraud"].value_counts(normalize=True).to_dict()
     for stat, value in fraud_distribution.items():
         pdf.cell(200, 10, f"{stat}: {value:.2f}", ln=True)
-
-    pdf.ln(10)
-    pdf.set_font("Arial", size=12, style='B')
-    pdf.cell(200, 10, "Top 20 Features and their Importance:", ln=True)
-    pdf.set_font("Arial", size=12)
    
     pdf.ln(10)
     pdf.cell(200, 10, "Variables Histogram:", ln=True)
